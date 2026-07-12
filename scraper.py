@@ -3,7 +3,7 @@ from playwright.sync_api import sync_playwright
 print("Memulai Jurus 2: Melepaskan Chrome Hantu ke medan perang...")
 
 def jalankan_chrome_hantu():
-    target_url = "https://www.mana2.my/channel/tv2/"
+    target_url = "https://www.mana2.my/channel/tvs/"
     url_rahasia = "https://gagal.com/robot_tidak_menemukan_link.m3u8"
 
     # Memulai Playwright
@@ -52,7 +52,7 @@ hls_content = f"""#EXTM3U
 """
 
 # MENYIMPANNYA
-with open("tv2_auto.m3u8", "w", encoding="utf-8") as file:
+with open("tvs_auto.m3u8", "w", encoding="utf-8") as file:
     file.write(hls_content)
 
 print("Misi Jurus 2 Selesai! File tv3_auto.m3u8 siap dihidangkan.")
