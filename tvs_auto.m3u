@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0f1a" />
+    <link rel="icon" type="image/png" href="/mytv-logo-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    />
+
+    <title>MYTV Mana-Mana - Live &amp; On Demand "Whenever, Wherever"!</title>
+    <meta
+      name="description"
+      content="MYTVâs Mana-Mana, Malaysia's first national OTT streaming service houses various channels under one roof. MYTV Mana-Mana was created under the National Broadcasting Digitalisation Project and is part of a national agenda to assist in narrowing the digital divide for all Malaysian. On MYTV Mana-Mana, you can watch a variety of local and foreign programmes in HD, Live & On Demand &quot;Whenever, Wherever&quot;!"
+    />
+    <meta property="og:site_name" content="MYTV Mana-Mana" />
+    <meta property="og:title" content="MYTV Mana-Mana - Live &amp; On Demand &quot;Whenever, Wherever&quot;!" />
+    <meta
+      property="og:description"
+      content="Malaysia's first national OTT streaming service â local & foreign channels and programmes in HD, Live & On Demand &quot;Whenever, Wherever&quot;!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/mytv-og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="module" crossorigin src="/assets/index-DvcTB6Eb.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-B6w9YPdo.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-KH2nPeYw.css">
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!--
+      Tenbyte RUM (Real User Monitoring) â feeds real-user QoE
+      telemetry back to Tenbyte's multi-CDN router so traffic can be
+      routed to the best-performing edge per ISP / region in real
+      time. Captures TTFB, device + ISP info, geo, and per-PoP
+      response performance during actual viewer sessions.
+
+      Loaded `async` so it never blocks first paint. The endpoint is
+      versionless (`/sdk/rum.js`) â Tenbyte rolls SDK updates server
+      side. The config object disables console noise in production.
+
+      If Tenbyte sends a new endpoint or wants a different config,
+      swap the values below â keep both tags at the document level
+      so the RUM session doesn't reset on route changes.
+    -->
+    <script>
+      window.TENBYTE_RUM = { enableConsoleLog: false };
+    </script>
+    <script src="https://rumito.tenbyte.io/sdk/rum.js" async></script>
+  </body>
+</html>
