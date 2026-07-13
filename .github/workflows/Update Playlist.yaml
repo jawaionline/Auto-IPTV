@@ -1,35 +1,36 @@
-name: Update Playlist
+name: Auto Update IPTV Playlist
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-      - uses: actions/setup-python@v5
+      - name: Setup Python
+        uses: actions/setup-python@v3
         with:
-          python-version: "3.12"
+          python-version: '3.9'
 
-      - run: pip install requests
+      # PATCH JURUS 2: Menginstal Playwright dan Chrome Hantu
+      - name: Install Playwright & Dependencies
+        run: |
+          pip install playwright
+          playwright install chromium
 
-      - run: python update.py
+      - name: Jalankan Scraper (Jurus 2)
+        run: python scraper.py
 
-      - run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add tvs_auto.m3u
-
-          git diff --cached --quiet || (
-            git commit -m "Auto update playlist"
-            git push
-          )
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git add .
+          git commit -m "Auto-Update Token dengan Jurus 2 🔥" || echo "Tidak ada token yang berubah."
+          git push
