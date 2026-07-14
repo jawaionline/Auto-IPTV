@@ -1,0 +1,36 @@
+name: Update Playlist Trans7
+
+on:
+  schedule:
+    - cron: '0 */1 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.9'
+
+      # PATCH JURUS 2: Menginstal Playwright dan Chrome Hantu
+      - name: Install Playwright & Dependencies
+        run: |
+          pip install playwright
+          playwright install chromium
+
+      - name: Jalankan Scraper (Jurus 2)
+        run: python hehe.py
+
+      - name: Commit and Push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git add .
+          git commit -m "Auto-Update Token dengan Jurus 2 🔥" || echo "Tidak ada token yang berubah."
+          git push
