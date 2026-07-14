@@ -55,4 +55,4 @@ hls_content = f"""#EXTM3U
 with open("trans7_auto.m3u8", "w", encoding="utf-8") as file:
     file.write(hls_content)
 
-print("Misi Jurus 2 Selesai! File tv3_auto.m3u8 siap dihidangkan.")
+print("Misi Jurus 2 Selesai! File trans7_auto.m3u8 siap dihidangkan.")
